@@ -1,8 +1,8 @@
 import Redis from "ioredis"; // Redis
 import { ethers } from "ethers"; // Ethers
 import { getSession } from "next-auth/client"; // Session management
-import { isValidInput } from "../../app/page"; // Address check
-import parseTwitterDate from "../../../utils/dates"; // Parse Twitter dates
+import { isValidInput } from "../../page"; // Address check
+import parseTwitterDate from "../../../../utils/dates"; // Parse Twitter dates
 import { hasClaimed } from "./status"; // Claim status
 
 

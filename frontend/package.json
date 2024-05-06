@@ -11,6 +11,7 @@
   "dependencies": {
     "ioredis": "^5.4.1",
     "next": "14.2.3",
+    "next-auth": "^4.24.7",
     "react": "^18",
     "react-dom": "^18"
   },
