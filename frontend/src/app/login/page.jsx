@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import "./styles.css"; // Import your CSS file
-
 const Login = () => {
   const { data: session, status } = useSession();
   const [ethereumAddress, setEthereumAddress] = useState("");
@@ -13,7 +12,6 @@ const Login = () => {
     setEthereumAddress(address);
     validateAddress(address);
   };
-
   const validateAddress = (address) => {
     const ethAddressRegex = /^0x[a-fA-F0-9]{40}$/;
     setIsValid(ethAddressRegex.test(address));
@@ -22,9 +20,10 @@ const Login = () => {
   return (
     <div className="container">
       <div className="login-container">
+        <h2 className="title">Welcome to Advance Faucet</h2>
         {status === "loading" && <p className="loading">Loading...</p>}
         {status === "authenticated" && (
-          <>
+          <div className="authenticated-container">
             <p className="welcome">Welcome, {session.user?.name}!</p>
             <div className="textbox-container">
               <p className="textbox-label">
@@ -40,19 +39,24 @@ const Login = () => {
               {!isValid && (
                 <p className="error-message">Invalid Ethereum address</p>
               )}
+            </div>
+            <div className="button-container">
               <button className="textbox-button" disabled={!isValid}>
                 Receive Tokens
               </button>
+              <button onClick={() => signOut()} className="logout-button">
+                Logout
+              </button>
             </div>
-            <button onClick={() => signOut()} className="logout-button">
-              Logout
-            </button>
-          </>
+          </div>
         )}
         {status !== "authenticated" && (
-          <button onClick={() => signIn("twitter")} className="signin-button">
-            Sign In with Twitter
-          </button>
+          <div className="signin-container">
+            <button onClick={() => signIn("twitter")} className="signin-button">
+              <span className="icon"></span>
+              Sign In with Twitter
+            </button>
+          </div>
         )}
       </div>
     </div>
