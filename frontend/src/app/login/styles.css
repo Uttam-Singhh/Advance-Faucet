@@ -1,140 +1,111 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+/* styles.css */
 
-.container {
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f7f7f7;
-  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
 }
 
 .login-container {
-  padding: 2.5rem;
-  border-radius: 12px;
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  max-width: 400px;
-  width: 100%;
-}
-
-.title {
-  font-size: 1.8rem;
-  color: #1da1f2;
-  margin-bottom: 1.5rem;
-}
-
-.authenticated-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+.loading {
+  color: #666666;
+}
+
+.authenticated-container, .signin-container {
+  width: 100%;
+}
+
 .welcome {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  color: #333;
+  font-size: 18px;
+  color: #333333;
+  margin-bottom: 20px;
 }
 
 .textbox-container {
-  margin-bottom: 1.5rem;
+  margin-bottom: 20px;
   text-align: left;
   width: 100%;
 }
 
 .textbox-label {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: #555;
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 5px;
 }
 
 .textbox {
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  width: 100%;
-  margin-bottom: 0.5rem;
-  transition: border-color 0.3s;
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 14px;
 }
 
-.textbox:focus {
-  outline: none;
-  border-color: #1da1f2;
-}
-
-.textbox.invalid {
+.invalid {
   border-color: #ff4d4f;
 }
 
 .error-message {
   color: #ff4d4f;
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
 .button-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
   width: 100%;
 }
 
-.textbox-button,
-.logout-button {
-  padding: 0.75rem 1.5rem;
-  background-color: #1da1f2;
-  color: #fff;
+.textbox-button, .logout-button, .signin-button {
+  background-color: #007bff;
+  color: #ffffff;
   border: none;
-  border-radius: 6px;
-  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 14px;
   transition: background-color 0.3s;
-  margin: 0 0.5rem;
 }
 
-.textbox-button:disabled {
-  background-color: #ccc;
+.textbox-button[disabled] {
+  background-color: #cccccc;
   cursor: not-allowed;
 }
 
+.textbox-button:hover:not([disabled]), .logout-button:hover, .signin-button:hover {
+  background-color: #0056b3;
+}
+
 .logout-button {
-  background-color: #ff4d4f;
+  background-color: #dc3545;
 }
 
-.signin-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.signin-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  background-color: #1da1f2;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.signin-button .icon {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-image: url("https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/twitter_circle-512.png");
-  background-size: cover;
-  margin-right: 0.5rem;
-}
-
-.signin-button:hover,
-.textbox-button:hover,
-.logout-button:hover {
-  background-color: #0c8de4;
+.icon {
+  margin-right: 8px;
 }
